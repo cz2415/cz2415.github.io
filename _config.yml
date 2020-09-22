@@ -106,3 +106,9 @@ theme: butterfly
 deploy:
   type: 'git'
   repo: git@github.com:cz2415/cz2415.github.io.git
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
