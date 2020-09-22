@@ -5,6 +5,8 @@ tags:
 ---
 
 excel文件对比
+
+```python
 from openpyxl import *
 
 
@@ -72,3 +74,4 @@ def compareExcel(ename1, ename2):
 if __name__ == "__main__":
     compareExcel(r'C:\Users\USER\Desktop\04.xlsx',
                  r'C:\Users\USER\Desktop\05.xlsx')
+```
