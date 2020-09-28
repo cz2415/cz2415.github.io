@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>test | Brave Winds and Waves</title><meta name="description" content="excel文件对比 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667from openpyxl import *def compareExcel(ename1, ename2):    print("><meta name="author" content="Joker,cz2415@gmail.com"><meta name="copyright" content="Joker"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="https://cdn.cz2415.com/favicon.ico"><link rel="canonical" href="https://cz2415.github.io/2020/09/18/test/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="test"><meta property="og:url" content="https://cz2415.github.io/2020/09/18/test/"><meta property="og:site_name" content="Brave Winds and Waves"><meta property="og:description" content="excel文件对比 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667from openpyxl import *def compareExcel(ename1, ename2):    print("><meta property="og:image" content="https://cdn.cz2415.com/image/article/077.jpg"><meta property="article:published_time" content="2020-09-18T03:47:43.000Z"><meta property="article:modified_time" content="2020-09-28T06:02:11.089Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime: '',
+  date_suffix: {"one_hour":"Just","hours":"hours ago","day":"days ago"},
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-09-28 14:02:11'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.cz2415.com/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">1</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.cz2415.com/image/article/077.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Brave Winds and Waves</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">test</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-09-18T03:47:43.000Z" title="Created 2020-09-18 11:47:43">2020-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-09-28T06:02:11.089Z" title="Updated 2020-09-28 14:02:11">2020-09-28</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>excel文件对比</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compareExcel</span>(<span class="params">ename1, ename2</span>):</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">&quot;Begin&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;Comparing&quot;</span>, ename1, ename2)</span><br><span class="line">    fileSame = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    wb1 = load_workbook(filename=ename1, read_only=<span class="literal">True</span>)</span><br><span class="line">    wb2 = load_workbook(filename=ename2, read_only=<span class="literal">True</span>)</span><br><span class="line">    sn1 = wb1.sheetnames</span><br><span class="line">    sn2 = wb2.sheetnames</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sn1 != sn2):</span><br><span class="line">        print(<span class="string">&quot;两个excel 的 sheet 名不同&quot;</span>)</span><br><span class="line">        print(ename1, <span class="string">&quot; sheet names:&quot;</span>, sn1)</span><br><span class="line">        print(ename2, <span class="string">&quot; sheet names:&quot;</span>, sn2)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        sn = sn1</span><br><span class="line">        <span class="keyword">for</span> wsn <span class="keyword">in</span> sn:</span><br><span class="line">            ws1 = wb1[wsn]</span><br><span class="line">            ws2 = wb2[wsn]</span><br><span class="line">            c = ws1.max_column</span><br><span class="line">            r = ws1.max_row</span><br><span class="line">            <span class="keyword">if</span> ((ws2.max_column != c) <span class="keyword">or</span> (ws2.max_row != r)):</span><br><span class="line">                print(<span class="string">&quot;SHEET &quot;</span>, wsn,</span><br><span class="line">                      <span class="string">&quot;: 行数或列数不同!&quot;</span>)</span><br><span class="line">                fileSame = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                flag = <span class="literal">True</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, r+<span class="number">1</span>):</span><br><span class="line">                    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, c+<span class="number">1</span>):</span><br><span class="line">                        c1 = ws1.cell(i, j)</span><br><span class="line">                        c2 = ws2.cell(i, j)</span><br><span class="line">                        <span class="keyword">if</span> (c1):</span><br><span class="line">                            <span class="keyword">if</span> (c2):</span><br><span class="line">                                <span class="keyword">if</span> (c1.value != c2.value):</span><br><span class="line">                                    <span class="keyword">if</span> ((wsn == <span class="string">&quot;Internal Info&quot;</span>) <span class="keyword">and</span> ((i == <span class="number">4</span>) <span class="keyword">and</span> (j == <span class="number">2</span>)) <span class="keyword">or</span> ((i == <span class="number">5</span>) <span class="keyword">and</span> (j == <span class="number">3</span>))):</span><br><span class="line">                                        <span class="keyword">continue</span></span><br><span class="line">                                    print(c1.coordinate)</span><br><span class="line">                                    print(<span class="string">&quot;v1:&quot;</span>, c1.value)</span><br><span class="line">                                    print(<span class="string">&quot;v2:&quot;</span>, c2.value)</span><br><span class="line">                                    print(</span><br><span class="line">                                        <span class="string">&quot;-------------------------------------------------------------------------------------------------------------&quot;</span>)</span><br><span class="line">                                    flag = <span class="literal">False</span></span><br><span class="line">                            <span class="keyword">else</span>:</span><br><span class="line">                                print(<span class="string">&quot;DIFFERDENT_TO_NONE at SHEET-&quot;</span>,</span><br><span class="line">                                      wsn, <span class="string">&quot;: At (&quot;</span>, i, <span class="string">&quot;,&quot;</span>, j, <span class="string">&quot;)&quot;</span>)</span><br><span class="line">                                print(<span class="string">&quot;diff FROM&quot;</span>, c1.value)</span><br><span class="line">                                flag = <span class="literal">False</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">if</span> (c2):</span><br><span class="line">                                print(<span class="string">&quot;DIFFERDENT_TO_NONE at SHEET-&quot;</span>,</span><br><span class="line">                                      wsn, <span class="string">&quot;: At (&quot;</span>, i, <span class="string">&quot;,&quot;</span>, j, <span class="string">&quot;)&quot;</span>)</span><br><span class="line">                                print(<span class="string">&quot;diff FROM&quot;</span>, c2.value)</span><br><span class="line">                                flag = <span class="literal">False</span></span><br><span class="line">                fileSame = fileSame <span class="keyword">and</span> flag</span><br><span class="line">        <span class="keyword">if</span> fileSame:</span><br><span class="line">            print(<span class="string">&quot;SAME_FILE:&quot;</span>, ename1, ename2)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">&quot;Completed&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    compareExcel(<span class="string">r&#x27;C:\Users\USER\Desktop\04.xlsx&#x27;</span>,</span><br><span class="line">                 <span class="string">r&#x27;C:\Users\USER\Desktop\05.xlsx&#x27;</span>)</span><br></pre></td></tr></table></figure></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:cz2415@gmail.com">Joker</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://cz2415.github.io/2020/09/18/test/">https://cz2415.github.io/2020/09/18/test/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.cz2415.com/image/article/077.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/28/hello-world/"><img class="prev-cover" src="https://cdn.cz2415.com/image/article/057.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/17/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B/"><img class="next-cover" src="https://cdn.cz2415.com/image/article/077.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">软件质量模型</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(https://cdn.cz2415.com/image/article/077.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Joker</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'vRqinVKgH1lNuVE8axXiEUSi-gzGzoHsz',
+      appKey: 'lCG4cvjENgQEV856DS8WoRSS',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script></div></body></html>
